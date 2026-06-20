@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Librería</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<header class="header"> <br><br>
+    <h1 class="titulo">Sistema de Gestión de Librería</h1>
+    
+</header>
+<body>
+    
+    <section class="contenedor">
+        <h2>Autores</h2>
+
+        <input type="number" id="codAutor" placeholder="Código">
+        <input type="text" id="nomAutor" placeholder="Nombre">
+        <input type="text" id="apeAutor" placeholder="Apellido">
+
+        <div class="botones">
+            <button onclick="guardarAutor()">Guardar</button>
+            <button onclick="buscarAutor()">Buscar</button>
+            <button onclick="editarAutor()">Editar</button>
+            <button onclick="eliminarAutor()">Eliminar</button>
+        </div>
+
+        <table id="tablaAutores">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    
+    <section class="contenedor">
+        <h2>Géneros</h2>
+
+        <input type="number" id="codGenero" placeholder="Código">
+        <input type="text" id="nomGenero" placeholder="Nombre del Género">
+
+        <div class="botones">
+            <button onclick="guardarGenero()">Guardar</button>
+            <button onclick="buscarGenero()">Buscar</button>
+            <button onclick="editarGenero()">Editar</button>
+            <button onclick="eliminarGenero()">Eliminar</button>
+        </div>
+
+        <table id="tablaGeneros">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+  
+    <section class="contenedor">
+        <h2>Libros</h2>
+
+        <input type="number" id="codLibro" placeholder="Código">
+        <input type="text" id="tituloLibro" placeholder="Título">
+        <input type="date" id="fechaLibro">
+        <input type="number" id="paginasLibro" placeholder="Cantidad de páginas">
+
+        <select id="autorLibro"></select>
+        <select id="generoLibro"></select>
+
+        <div class="botones">
+            <button onclick="guardarLibro()">Guardar</button>
+            <button onclick="buscarLibro()">Buscar</button>
+            <button onclick="editarLibro()">Editar</button>
+            <button onclick="eliminarLibro()">Eliminar</button>
+        </div>
+
+        <table id="tablaLibros">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Fecha</th>
+                    <th>Páginas</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

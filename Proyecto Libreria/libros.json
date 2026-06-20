@@ -1,0 +1,50 @@
+[
+  {
+    "codigo": 1,
+    "titulo": "Cien años de soledad",
+    "fechaPublicacion": "1967-05-30",
+    "paginas": 417,
+    "autor": 1,
+    "genero": 1
+  },
+  {
+    "codigo": 2,
+    "titulo": "Don Quijote de la Mancha",
+    "fechaPublicacion": "1605-01-16",
+    "paginas": 863,
+    "autor": 2,
+    "genero": 1
+  },
+  {
+    "codigo": 3,
+    "titulo": "Harry Potter y la piedra filosofal",
+    "fechaPublicacion": "1997-06-26",
+    "paginas": 223,
+    "autor": 3,
+    "genero": 2
+  },
+  {
+    "codigo": 4,
+    "titulo": "El Señor de los Anillos",
+    "fechaPublicacion": "1954-07-29",
+    "paginas": 1178,
+    "autor": 4,
+    "genero": 3
+  },
+  {
+    "codigo": 5,
+    "titulo": "1984",
+    "fechaPublicacion": "1949-06-08",
+    "paginas": 328,
+    "autor": 5,
+    "genero": 4
+  },
+  {
+    "codigo": 6,
+    "titulo": "El Principito",
+    "fechaPublicacion": "1943-04-06",
+    "paginas": 96,
+    "autor": 6,
+    "genero": 5
+  }
+]

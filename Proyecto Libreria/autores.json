@@ -1,0 +1,32 @@
+[
+  {
+    "codigo": 1,
+    "nombre": "Gabriel",
+    "apellido": "García Márquez"
+  },
+  {
+    "codigo": 2,
+    "nombre": "Miguel",
+    "apellido": "de Cervantes"
+  },
+  {
+    "codigo": 3,
+    "nombre": "Joanne",
+    "apellido": "Rowling"
+  },
+  {
+    "codigo": 4,
+    "nombre": "John Ronald Reuel",
+    "apellido": "Tolkien"
+  },
+  {
+    "codigo": 5,
+    "nombre": "George",
+    "apellido": "Orwell"
+  },
+  {
+    "codigo": 6,
+    "nombre": "Antoine",
+    "apellido": "de Saint-Exupéry"
+  }
+]
