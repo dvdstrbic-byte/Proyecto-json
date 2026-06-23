@@ -2,7 +2,7 @@ let autores = [];
 let generos = [];
 let libros = [];
 
-function cargarDatos() {
+function cargarDatos(){
     
     fetch("autores.json")
         .then(resAutores => resAutores.json())
@@ -35,12 +35,7 @@ function cargarDatos() {
 
 window.addEventListener("load", cargarDatos);
 
-
-// ==========================
-// AUTORES
-// ==========================
-
-function guardarAutor() {
+function guardarAutor(){
 
     autores.push({
         codigo: Number(document.getElementById("codAutor").value),
@@ -52,62 +47,51 @@ function guardarAutor() {
     cargarSelects();
 }
 
-function buscarAutor() {
+function buscarAutor(){
 
-    const codigo =
-        Number(document.getElementById("codAutor").value);
+    const codigo = Number(document.getElementById("codAutor").value);
 
-    const autor =
-        autores.find(a => a.codigo === codigo);
+    const autor = autores.find(a => a.codigo === codigo);
 
-    if (autor) {
+    if(autor){
 
-        document.getElementById("nomAutor").value =
-            autor.nombre;
+        document.getElementById("nomAutor").value = autor.nombre;
 
-        document.getElementById("apeAutor").value =
-            autor.apellido;
+        document.getElementById("apeAutor").value = autor.apellido;
 
-    } else {
-
-        alert("Autor no encontrado");
+    }else{
+         alert("Autor no encontrado");
     }
 }
 
-function editarAutor() {
+// AUTORES
 
-    const codigo =
-        Number(document.getElementById("codAutor").value);
+function editarAutor(){
 
-    const autor =
-        autores.find(a => a.codigo === codigo);
+    const codigo = Number(document.getElementById("codAutor").value);
 
-    if (autor) {
+    const autor = autores.find(a => a.codigo === codigo);
 
-        autor.nombre =
-            document.getElementById("nomAutor").value;
+    if(autor){
+        autor.nombre = document.getElementById("nomAutor").value;
 
-        autor.apellido =
-            document.getElementById("apeAutor").value;
+        autor.apellido = document.getElementById("apeAutor").value;
 
         mostrarAutores();
         cargarSelects();
 
         alert("Autor actualizado");
 
-    } else {
-
-        alert("Autor no encontrado");
+    }else{
+       alert("Autor no encontrado");
     }
 }
 
-function eliminarAutor() {
+function eliminarAutor(){
 
-    const codigo =
-        Number(document.getElementById("codAutor").value);
+    const codigo = Number(document.getElementById("codAutor").value);
 
-    autores =
-        autores.filter(a => a.codigo !== codigo);
+    autores = autores.filter(a => a.codigo !== codigo);
 
     mostrarAutores();
     cargarSelects();
@@ -116,8 +100,7 @@ function eliminarAutor() {
 
 // GENEROS
 
-
-function guardarGenero() {
+function guardarGenero(){
 
     generos.push({
         codigo: Number(document.getElementById("codGenero").value),
@@ -128,54 +111,42 @@ function guardarGenero() {
     cargarSelects();
 }
 
-function buscarGenero() {
+function buscarGenero(){
 
-    const codigo =
-        Number(document.getElementById("codGenero").value);
+    const codigo = Number(document.getElementById("codGenero").value);
 
-    const genero =
-        generos.find(g => g.codigo === codigo);
+    const genero = generos.find(g => g.codigo === codigo);
 
-    if (genero) {
+    if(genero){
+    document.getElementById("nomGenero").value = genero.nombre;
 
-        document.getElementById("nomGenero").value =
-            genero.nombre;
-
-    } else {
-
-        alert("Género no encontrado");
+    }else{
+         alert("Género no encontrado");
     }
 }
 
-function editarGenero() {
+function editarGenero(){
 
-    const codigo =
-        Number(document.getElementById("codGenero").value);
+    const codigo = Number(document.getElementById("codGenero").value);
 
-    const genero =
-        generos.find(g => g.codigo === codigo);
+    const genero = generos.find(g => g.codigo === codigo);
 
-    if (genero) {
-
-        genero.nombre =
-            document.getElementById("nomGenero").value;
+    if(genero){
+        genero.nombre = document.getElementById("nomGenero").value;
 
         mostrarGeneros();
         cargarSelects();
 
-    } else {
-
-        alert("Género no encontrado");
+    }else{
+     alert("Género no encontrado");
     }
 }
 
-function eliminarGenero() {
+function eliminarGenero(){
 
-    const codigo =
-        Number(document.getElementById("codGenero").value);
+    const codigo = Number(document.getElementById("codGenero").value);
 
-    generos =
-        generos.filter(g => g.codigo !== codigo);
+    generos = generos.filter(g => g.codigo !== codigo);
 
     mostrarGeneros();
     cargarSelects();
@@ -184,104 +155,75 @@ function eliminarGenero() {
 
 // LIBROS
 
-
-function guardarLibro() {
+function guardarLibro(){
 
     libros.push({
 
-        codigo:
-            Number(document.getElementById("codLibro").value),
+        codigo: Number(document.getElementById("codLibro").value),
 
-        titulo:
-            document.getElementById("tituloLibro").value,
+        titulo: document.getElementById("tituloLibro").value,
 
-        fechaPublicacion:
-            document.getElementById("fechaLibro").value,
+        fechaPublicacion: document.getElementById("fechaLibro").value,
 
-        paginas:
-            Number(document.getElementById("paginasLibro").value),
+        paginas:Number(document.getElementById("paginasLibro").value),
+        
+        autor: Number(document.getElementById("autorLibro").value),
 
-        autor:
-            Number(document.getElementById("autorLibro").value),
-
-        genero:
-            Number(document.getElementById("generoLibro").value)
+        genero: Number(document.getElementById("generoLibro").value)
     });
 
     mostrarLibros();
 }
 
-function buscarLibro() {
+function buscarLibro(){
 
-    const codigo =
-        Number(document.getElementById("codLibro").value);
+    const codigo = Number(document.getElementById("codLibro").value);
 
-    const libro =
-        libros.find(l => l.codigo === codigo);
+    const libro = libros.find(l => l.codigo === codigo);
 
-    if (libro) {
+    if(libro){
+        document.getElementById("tituloLibro").value = libro.titulo;
 
-        document.getElementById("tituloLibro").value =
-            libro.titulo;
+        document.getElementById("fechaLibro").value = libro.fechaPublicacion;
 
-        document.getElementById("fechaLibro").value =
-            libro.fechaPublicacion;
+        document.getElementById("paginasLibro").value = libro.paginas;
 
-        document.getElementById("paginasLibro").value =
-            libro.paginas;
+        document.getElementById("autorLibro").value = libro.autor;
 
-        document.getElementById("autorLibro").value =
-            libro.autor;
+        document.getElementById("generoLibro").value = libro.genero;
 
-        document.getElementById("generoLibro").value =
-            libro.genero;
-
-    } else {
-
+}else{
         alert("Libro no encontrado");
-    }
-}
+}}
 
-function editarLibro() {
+function editarLibro(){
 
-    const codigo =
-        Number(document.getElementById("codLibro").value);
+    const codigo = Number(document.getElementById("codLibro").value);
 
-    const libro =
-        libros.find(l => l.codigo === codigo);
+    const libro = libros.find(l => l.codigo === codigo);
 
-    if (libro) {
+    if(libro){
+        libro.titulo = document.getElementById("tituloLibro").value;
 
-        libro.titulo =
-            document.getElementById("tituloLibro").value;
+        libro.fechaPublicacion = document.getElementById("fechaLibro").value;
 
-        libro.fechaPublicacion =
-            document.getElementById("fechaLibro").value;
+        libro.paginas = Number(document.getElementById("paginasLibro").value);
 
-        libro.paginas =
-            Number(document.getElementById("paginasLibro").value);
+        libro.autor = Number(document.getElementById("autorLibro").value);
 
-        libro.autor =
-            Number(document.getElementById("autorLibro").value);
-
-        libro.genero =
-            Number(document.getElementById("generoLibro").value);
+        libro.genero = Number(document.getElementById("generoLibro").value);
 
         mostrarLibros();
 
-    } else {
+}else{
+    alert("Libro no encontrado");
+}}
 
-        alert("Libro no encontrado");
-    }
-}
+function eliminarLibro(){
 
-function eliminarLibro() {
+    const codigo = Number(document.getElementById("codLibro").value);
 
-    const codigo =
-        Number(document.getElementById("codLibro").value);
-
-    libros =
-        libros.filter(l => l.codigo !== codigo);
+    libros = libros.filter(l => l.codigo !== codigo);
 
     mostrarLibros();
 }
@@ -289,13 +231,12 @@ function eliminarLibro() {
 
 // TABLAS
 
-function mostrarAutores() {
+function mostrarAutores(){
 
     let html = "";
-
-    autores.forEach(a => {
-
-        html += `
+    autores.forEach(a => {      
+        
+    html += `
         <tr>
             <td>${a.codigo}</td>
             <td>${a.nombre}</td>
@@ -304,14 +245,12 @@ function mostrarAutores() {
         `;
     });
 
-    document.querySelector("#tablaAutores tbody").innerHTML =
-        html;
+    document.querySelector("#tablaAutores tbody").innerHTML = html;
 }
 
-function mostrarGeneros() {
+function mostrarGeneros(){
 
     let html = "";
-
     generos.forEach(g => {
 
         html += `
@@ -322,21 +261,17 @@ function mostrarGeneros() {
         `;
     });
 
-    document.querySelector("#tablaGeneros tbody").innerHTML =
-        html;
+    document.querySelector("#tablaGeneros tbody").innerHTML = html;
 }
 
-function mostrarLibros() {
+function mostrarLibros(){
 
     let html = "";
-
     libros.forEach(l => {
 
-        const autor =
-            autores.find(a => a.codigo === l.autor);
+        const autor = autores.find(a => a.codigo === l.autor);
 
-        const genero =
-            generos.find(g => g.codigo === l.genero);
+        const genero = generos.find(g => g.codigo === l.genero);
 
         html += `
         <tr>
@@ -350,27 +285,21 @@ function mostrarLibros() {
         `;
     });
 
-    document.querySelector("#tablaLibros tbody").innerHTML =
-        html;
+    document.querySelector("#tablaLibros tbody").innerHTML = html;
 }
 
 
 // SELECTS
 
+function cargarSelects(){
 
-function cargarSelects() {
+    const selectAutor = document.getElementById("autorLibro");
+    
+    const selectGenero = document.getElementById("generoLibro");
 
-    const selectAutor =
-        document.getElementById("autorLibro");
+    selectAutor.innerHTML = '<option value="">Seleccione Autor</option>';
 
-    const selectGenero =
-        document.getElementById("generoLibro");
-
-    selectAutor.innerHTML =
-        '<option value="">Seleccione Autor</option>';
-
-    selectGenero.innerHTML =
-        '<option value="">Seleccione Género</option>';
+    selectGenero.innerHTML = '<option value="">Seleccione Género</option>';
 
     autores.forEach(a => {
 
